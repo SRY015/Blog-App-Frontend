@@ -90,10 +90,9 @@ function WritePost() {
             className="w-[20%] text-center p-2 focus:outline-none block mx-10"
             required
             onChange={(e) => setCategory(e.target.value)}
+            placeholder="Select category"
           >
-            <option selected disabled value="select">
-              ---Select Category---
-            </option>
+            <option value="select">---Select Category---</option>
             <option value="nature">Nature</option>
             <option value="music">Music</option>
             <option value="game">Game</option>
