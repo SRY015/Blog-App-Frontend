@@ -1,29 +1,24 @@
-import React, { useContext } from "react";
-import { FaSquareFacebook } from "react-icons/fa6";
-import {
-  FaTwitter,
-  FaInstagramSquare,
-  FaPinterestSquare,
-  FaSearch,
-} from "react-icons/fa";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { UserContext } from "../context/UserContext";
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
-  console.log(user);
+  const [toggle, setToggle] = useState(false);
+
+  const closeNav = () => {
+    setToggle(false);
+  };
+
   return (
     <div
-      className={`sticky top-0 font-josefin grid grid-cols-4 p-2 ${
+      className={`sticky md:fixed w-full top-0 font-josefin grid grid-cols-4 p-2 ${
         user == null && "py-4"
       } bg-white z-50`}
     >
-      <div className="flex items-center space-x-3 justify-center">
-        <FaSquareFacebook className="text-gray-400 text-3xl hover:cursor-pointer" />
-        <FaTwitter className="text-gray-400 text-3xl hover:cursor-pointer" />
-        <FaInstagramSquare className="text-gray-400 text-3xl hover:cursor-pointer" />
-        <FaPinterestSquare className="text-gray-400 text-3xl hover:cursor-pointer" />
+      <div className="font-lobster flex items-center text-3xl text-cyan-600">
+        BlogApp
       </div>
       <div className="col-span-2 flex items-center space-x-5 justify-center">
         <NavLink to="/" className="text-2xl text-gray-400 hover:cursor-pointer">

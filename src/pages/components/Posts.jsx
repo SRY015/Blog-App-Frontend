@@ -6,14 +6,14 @@ function Posts({ blogs }) {
   return (
     <div className="grid grid-cols-5">
       {/* Posts-- */}
-      <div className="col-span-4 grid grid-cols-3 gap-5 p-10">
+      <div className="col-span-4 grid md:grid-cols-2 lg:grid-cols-4 gap-5 p-10">
         {blogs &&
           blogs.map((blog) => {
             return <PostCard key={blog._id} blog={blog} />;
           })}
       </div>
       {/* SideBar-- */}
-      <div className="p-5 bg-slate-50">
+      <div className="p-2 bg-slate-50">
         <SideBar />
       </div>
     </div>
