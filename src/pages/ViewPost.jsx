@@ -24,7 +24,7 @@ function ViewPost() {
       `https://blog-app-api-node-mongodb.onrender.com/api/blog/${postId}`
     );
     const blogs = await res.json();
-    console.log(blogs);
+    // console.log(blogs);
     setBlog(blogs);
     setTitle(blogs.blog.title);
     setDescription(blogs.blog.description);
@@ -40,7 +40,7 @@ function ViewPost() {
       );
       window.location.replace("/");
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
       showErrorToast("Something went wrong, please try again later !!");
     }
   };
@@ -69,13 +69,13 @@ function ViewPost() {
   }, []);
 
   return (
-    <div className="grid grid-cols-5">
+    <div className="grid phone:grid-cols-1 lg:grid-cols-5 lg:pt-16">
       {/* Post-- */}
       <div className="col-span-4 py-5">
         <img
           src={blog?.blog?.photo}
           alt="Image is loading..."
-          className="w-full h-[400px] pr-5 pl-5"
+          className="w-full phone:h-[250px] lg:h-[400px] pr-5 pl-5 rounded-xl"
         />
         <div className="flex mt-2 px-5">
           {updateMode ? (
@@ -94,22 +94,27 @@ function ViewPost() {
           {blog?.blog?.email === user?.email && (
             <span className="text-3xl">
               <FaEdit
-                className="cursor-pointer mr-3 inline-block text-blue-600"
+                className="cursor-pointer mr-3 inline-block text-blue-600 phone:text-[20px] lg:text-[30px]"
                 onClick={() => setUpdateMode(true)}
               />
               <MdDelete
-                className="cursor-pointer inline-block text-red-600"
+                className="cursor-pointer inline-block text-red-600 phone:text-[20px] lg:text-[30px]"
                 onClick={handleDelete}
               />
             </span>
           )}
         </div>
         <div className="flex mt-2 px-5 font-extrabold font-josefin opacity-70 text-orange-600">
-          <Link to={`/?user=${blog?.blog?.email}`}>
+          <Link
+            to={`/?user=${blog?.blog?.email}`}
+            className="phone:text-[12px]"
+          >
             Author : {blog && blog?.blog?.email}
           </Link>
           <div className="grow"></div>
-          <span>{blog && new Date(blog?.blog?.createdAt).toDateString()}</span>
+          <span className="phone:text-[12px]">
+            {blog && new Date(blog?.blog?.createdAt).toDateString()}
+          </span>
         </div>
         {updateMode ? (
           <textarea

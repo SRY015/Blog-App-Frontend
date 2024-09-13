@@ -33,7 +33,7 @@ function Register() {
     <div className="min-h-screen bg-[url('https://images.unsplash.com/photo-1654481414716-2f4ab5fe0fbe?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVuJTIwYW5kJTIwcGFwZXJ8ZW58MHx8MHx8fDA%3D')] bg-no-repeat bg-cover flex items-center">
       <form
         action=""
-        className=" border-4 border-black w-[30%] mr-auto ml-auto text-center p-5 shadow-2xl shadow-slate-400 rounded-lg bg-opacity-60 bg-slate-400"
+        className=" border-4 border-black phone:w-[90%] lg:w-[30%] mr-auto ml-auto text-center p-5 shadow-2xl shadow-slate-400 rounded-lg bg-opacity-60 bg-slate-400"
         onSubmit={handleSubmit}
       >
         <p className="font-lobster text-6xl mb-5 text-black">Register</p>

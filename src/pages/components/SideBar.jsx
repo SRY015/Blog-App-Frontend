@@ -28,13 +28,14 @@ function SideBar() {
         ABOUT ME
       </p>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHDvGtFaM6K4O58S1kMJ8G7PWyTvUj3rE5zw&s"
+        src="https://d1jj76g3lut4fe.cloudfront.net/uploads/images/637266f2edcfd_946538277402aivshumans.gif"
         alt=""
-        className="w-[85%] mr-auto ml-auto mt-5"
+        className="w-[95%] mr-auto ml-auto phone:h-[300px]"
       />
-      <p className="text-justify px-5 mt-5 font-lora">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae
-        provident qui obcaecati neque? Iure aperiam nobis odio alias! Dolores
+      <p className="text-justify px-5 mt-0 font-lora">
+        Welcome to BlogHaven, where your ideas come to life. Explore diverse
+        perspectives, share your thoughts, and connect with a community of
+        passionate writers and readers.
       </p>
       <p className="text-center font-semibold p-2 mt-5 border-t-2 border-b-2 border-gray-300">
         CATEGORIES

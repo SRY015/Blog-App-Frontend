@@ -20,7 +20,7 @@ function Home() {
   }, [search]);
 
   return (
-    <div className="pt-5">
+    <div className="phone:-mt-32 lg:mt-0 lg:pt-5">
       <HomeHeader />
       <Posts blogs={blogs.blogs} />
     </div>

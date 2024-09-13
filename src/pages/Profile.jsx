@@ -88,7 +88,9 @@ function Profile() {
     setUserSpecificBlog(blog.blogs);
   };
 
-  fetchBlogs();
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
 
   useEffect(() => {
     if (user === null) {
@@ -100,16 +102,16 @@ function Profile() {
     <>
       {showLightbox && <Lightbox onClose={handleDeleteAccount} />}
       <div
-        className={`min-h-screen w-[95%] mr-auto ml-auto grid grid-cols-5 py-5 ${
+        className={`min-h-screen w-[95%] mr-auto ml-auto grid phone:grid-cols-1 lg:grid-cols-5 py-5 ${
           showLightbox && "fixed opacity-50"
         }`}
       >
-        <div className="col-span-4">
-          <div className="flex px-10 text-red-600">
-            <p className="text-4xl font-lora">Update Your Account</p>
+        <div className="lg:col-span-4">
+          <div className="flex lg:px-10 text-red-600">
+            <p className="lg:text-4xl font-lora">Update Your Account</p>
             <div className="grow"></div>
             <span
-              className="text-2xl font-lora cursor-pointer hover:bg-red-100 p-2 rounded-md"
+              className="lg:text-2xl font-lora cursor-pointer hover:bg-red-100 p-2 rounded-md"
               onClick={handleShowLightbox}
             >
               Delete Accout
@@ -190,7 +192,7 @@ function Profile() {
             <br />
             <button
               type="submit"
-              className="bg-teal-600 px-10 py-2 text-white font-semibold rounded-lg block mr-auto ml-auto hover:bg-teal-500"
+              className="bg-teal-600 px-10 py-2 text-white font-semibold rounded-lg block mr-auto ml-auto hover:bg-teal-500 phone:mb-5 lg:mb-0"
             >
               Update
             </button>
@@ -202,10 +204,10 @@ function Profile() {
         <ToastContainer />
       </div>
       <div className={`${showLightbox && "hidden"}`}>
-        <p className="text-center -mt-5 font-bold text-4xl font-josefin underline bg-gradient-to-r from-blue-600 to-red-600 text-transparent bg-clip-text">
+        <p className="text-center lg:-mt-5 font-bold phone:text-2xl lg:text-4xl font-josefin underline bg-gradient-to-r from-blue-600 to-red-600 text-transparent bg-clip-text">
           Blogs Uploaded By You
         </p>
-        <div className="grid grid-cols-6 p-10 gap-5">
+        <div className="grid phone:grid-cols-1 lg:grid-cols-5 p-10 gap-5">
           {userSpecificBlog &&
             userSpecificBlog.map((blog) => {
               return (

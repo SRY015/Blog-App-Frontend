@@ -44,7 +44,7 @@ function Login() {
         <form
           onSubmit={handleSubmit}
           action=""
-          className=" border-4 border-black w-[30%] mr-auto ml-auto text-center p-5 shadow-2xl shadow-teal-700 rounded-lg"
+          className="border-4 border-black phone:w-[90%] lg:w-[30%] mr-auto ml-auto text-center p-5 shadow-2xl shadow-teal-700 rounded-lg"
         >
           <p className="font-lobster text-6xl mb-5 text-black">Login</p>
           <input

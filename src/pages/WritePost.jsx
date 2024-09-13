@@ -59,16 +59,16 @@ function WritePost() {
   });
 
   return (
-    <div className="px-5 min-h-screen w-11/12 mr-auto ml-auto py-10">
+    <div className="px-5 min-h-screen w-11/12 mr-auto ml-auto py-10 lg:pt-20">
       {file && (
         <img
           src={URL.createObjectURL(file)}
           alt="Image is loading ..."
-          className="w-full h-[350px] rounded-lg mb-5 "
+          className="w-full phone:h-[250px] lg:h-[350px] rounded-lg mb-5 "
         />
       )}
       <form action="" onSubmit={handleSubmit}>
-        <div className="flex items-center">
+        <div className="flex items-center flex-col lg:flex-row">
           <label
             htmlFor="fileInput"
             className="border-4 rounded-full  border-gray-500 mr-5"
@@ -87,7 +87,7 @@ function WritePost() {
           <select
             name="category"
             id="category"
-            className="w-[20%] text-center p-2 focus:outline-none block mx-10"
+            className="lg:w-[20%] text-center p-2 focus:outline-none block mx-10 phone:mt-5 lg:mt-0"
             required
             onChange={(e) => setCategory(e.target.value)}
             placeholder="Select category"
@@ -101,7 +101,7 @@ function WritePost() {
           <input
             type="text"
             placeholder="Write the title of your story ..."
-            className="focus:outline-none px-5 py-2 text-4xl w-[80%]"
+            className="focus:outline-none px-5 py-2 phone:text-2xl lg:text-4xl lg:w-[80%] phone:w-[110%] phone:mt-5 lg:mt-0"
             autoFocus={true}
             onChange={(e) => setTitle(e.target.value)}
             required
@@ -113,13 +113,13 @@ function WritePost() {
             name="desc"
             id=""
             placeholder="Tell your story ..."
-            className="p-10 text-2xl w-full text-black focus:outline-none resize-none"
+            className="lg:p-10 text-2xl w-full text-black focus:outline-none resize-none phone:mt-5 lg:mt-0"
             onChange={(e) => setDescription(e.target.value)}
             required
           ></textarea>
           <button
             type="submit"
-            className="bg-sky-600 p-2 text-white text-2xl font-semibold rounded-lg block ml-auto mt-10 hover:bg-sky-800"
+            className="bg-sky-600 p-2 text-white lg:text-2xl font-semibold rounded-lg block ml-auto mt-10 hover:bg-sky-800"
           >
             Publish
           </button>
